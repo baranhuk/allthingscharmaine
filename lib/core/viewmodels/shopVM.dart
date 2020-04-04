@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:allthingscharmaine/utils/uiData.dart';
 import 'package:allthingscharmaine/core/model/shop.dart';
 import 'package:allthingscharmaine/core/services/API.dart';
-import 'package:allthingscharmaine/locator.dart';
+
 
 
 
 class ShopVM with ChangeNotifier{
 
- Api _api = locator<Api>();
+ Api _api = Api();
 
   List<Shop> _clothing;
   List<Shop> _aprons;

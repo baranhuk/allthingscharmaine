@@ -1,4 +1,4 @@
-import 'package:allthingscharmaine/core/viewmodels/loginviewmodel.dart';
+import 'package:allthingscharmaine/core/viewmodels/login_view_model.dart';
 import 'package:allthingscharmaine/ui/screens/tabarscreens/cart_tab_screen.dart';
 import 'package:allthingscharmaine/ui/screens/tabarscreens/home_tab_screen.dart';
 import 'package:allthingscharmaine/ui/screens/tabarscreens/press_tab_screen.dart';
@@ -50,7 +50,7 @@ class _HomeScreenState extends State<HomeScreen>
 
   @override
   Widget build(BuildContext context) {
-    final userProvider = Provider.of<LoginViewmodel>(context);
+    final userProvider = Provider.of<LoginViewModel>(context);
     SizeConfig().init(context);
     return Scaffold(
       key: _scaffoldKey,
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen>
                     // _scaffoldKey.currentState.openDrawer();
                     Navigator.push(
                         context,
-                        MaterialPageRoute(
+                        MaterialPageRoute<void>(
                             builder: (context) => NotificationScreen()));
                   },
                 ),

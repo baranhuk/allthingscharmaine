@@ -16,7 +16,7 @@ class MoreRecentVideos extends StatelessWidget {
   Widget build(BuildContext context) {
     print(_categoryId);
     return Container(
-        child: StreamBuilder(stream: (_categoryId==null)?
+        child: StreamBuilder<QuerySnapshot>(stream: (_categoryId==null)?
         Firestore.instance.collection('video').orderBy('createdAt', descending: true).limit(4).snapshots():
         Firestore.instance.collection('video').where('category', arrayContains: _categoryId).orderBy('createdAt', descending: true).limit(4).snapshots(),
     builder: (context, snapShot){
@@ -57,7 +57,7 @@ class MoreRecentVideos extends StatelessWidget {
                             fontFamily: 'Poppins',
                             fontWeight: FontWeight.w400,
                           )),), onTap: () {
-                      Navigator.push(context, MaterialPageRoute(
+                      Navigator.push(context, MaterialPageRoute<void>(
                           builder: (context) =>
                               PressVideoList(
                                 title: 'press', category: 'videos',)));
@@ -87,10 +87,10 @@ class MoreRecentVideos extends StatelessWidget {
         child: HeaderMovieItem(snapShot),
         animation: _pageController,
         builder: (context, widget){
-          double bias = 1;
+          double bias = 1.0;
           if(_pageController.position.haveDimensions){
             bias = _pageController.page - index;
-            bias = (1 - (bias.abs()*0.25)).clamp(0.0, 1.0);
+            bias = (1 - (bias.abs()*0.25)).clamp(0.0, 1.0) as double;
           }
           return Center(child:
           SizedBox(width: Curves.easeInOut.transform(bias)*330, height: Curves.easeInOut.transform(bias)*260, child: widget,));

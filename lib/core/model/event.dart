@@ -1,3 +1,4 @@
+import 'package:allthingscharmaine/utils/config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 class Event {
   Event({
@@ -16,8 +17,8 @@ class Event {
 
   Event.fromSnapShot(DocumentSnapshot snapshot, String imageUrl):
         id = snapshot.documentID,
-        title = snapshot['title'],
-        description = snapshot['text'],
+        title = snapshot[Config.title] as String,
+        description = snapshot[Config.desc] as String,
         date = DateTime.parse(snapshot['eventDate'].toDate().toString()),
         image = imageUrl;
 

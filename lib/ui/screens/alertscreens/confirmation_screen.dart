@@ -52,7 +52,7 @@ class ConfirmationScreen extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
+                                  MaterialPageRoute<void>(
                                       builder: (context) => OrderHistory()));
                             },
                             child: Text(

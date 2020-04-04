@@ -19,7 +19,7 @@ class AskedQuestionsItem extends StatelessWidget {
         onTap: () {
           Navigator.push(
               context,
-              MaterialPageRoute(
+              MaterialPageRoute<void>(
                   builder: (context) => AskedQuestionsResponse(
                         imagePath: imagePath,
                         question: question,

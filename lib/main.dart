@@ -8,9 +8,9 @@ import 'package:allthingscharmaine/utils/my_colors.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'core/viewmodels/loginviewmodel.dart';
+import 'core/viewmodels/login_view_model.dart';
 import 'core/viewmodels/user_creditcard_viewmodel.dart';
-import 'core/viewmodels/userviewmodel.dart';
+import 'core/viewmodels/iser_view_model.dart';
 
 import 'ui/screens/signupscreens/login_screen.dart';
 
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
                 create: (_) => UserViewModel(),
               ),
               ChangeNotifierProvider(
-                create: (_) => LoginViewmodel(),
+                create: (_) => LoginViewModel(),
               ),
               ChangeNotifierProvider(
                 create: (_) => UserCreditCardViewmodel(),
@@ -55,8 +55,8 @@ class MyApp extends StatelessWidget {
                   primaryColor: MyColors().pinkInactive,
                   accentColor: MyColors().pinkActive,
                   fontFamily: 'Poppins'),
-onGenerateRoute: Router.generateRoute,
-onUnknownRoute: Router.unknownRoute,
+//onGenerateRoute: Router.generateRoute,
+//onUnknownRoute: Router.unknownRoute,
             ),
           );
         } else {
@@ -66,7 +66,7 @@ onUnknownRoute: Router.unknownRoute,
                 create: (_) => UserViewModel(),
               ),
               ChangeNotifierProvider(
-                create: (_) =>LoginViewmodel(),
+                create: (_) =>LoginViewModel(),
               ),
               ChangeNotifierProvider(
                 create: (_) => UserCreditCardViewmodel(),
@@ -87,8 +87,8 @@ onUnknownRoute: Router.unknownRoute,
                   primaryColor: MyColors().pinkInactive,
                   accentColor: MyColors().pinkActive,
                   fontFamily: 'Poppins'),
-                  onGenerateRoute: Router.generateRoute,
-                  onUnknownRoute: Router.unknownRoute,
+                  //onGenerateRoute: Router.generateRoute,
+                 // onUnknownRoute: Router.unknownRoute,
             ),
           );
         }

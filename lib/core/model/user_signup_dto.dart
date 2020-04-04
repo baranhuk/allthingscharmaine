@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:allthingscharmaine/utils/config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class UserSignupDTO {
@@ -25,13 +26,13 @@ class UserSignupDTO {
       this.reference});
 
   UserSignupDTO.fromMap(Map<dynamic, dynamic> map, {this.reference})
-      : firstName = map["firstName"],
-        lastName = map["lastName"],
-        email = map["email"],
-        password = map["password"],
-        imageUri = map["imageUri"],
-        firstSecurityQuestion = map["firstSecurityQuestion"],
-        secSecurityQuestion = map["secSecurityQuestion"];
+      : firstName = map[Config.firstName].toString(),
+        lastName = map["lastName"].toString(),
+        email = map["email"].toString(),
+        password = map["password"].toString(),
+        imageUri = map["imageUri"].toString(),
+        firstSecurityQuestion = map["firstSecurityQuestion"].toString(),
+        secSecurityQuestion = map["secSecurityQuestion"].toString();
 
   UserSignupDTO.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);

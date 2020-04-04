@@ -140,8 +140,8 @@ class Shop2State extends State<Shop2> {
         drawer: Drawer(child: NavigationDrawer()),
       );
   }
-  void _settingModalBottomSheet(context){
-    showModalBottomSheet(
+  void _settingModalBottomSheet(BuildContext context){
+    showModalBottomSheet<void>(
         context: context,
         builder: (BuildContext bc) {
           return Container(

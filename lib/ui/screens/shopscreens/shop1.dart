@@ -21,7 +21,7 @@ class Shop1State extends State<Shop1>
   int active = 0;
   Color _color;
   List<Shop> _categories;
-  var items;
+  ShopVM items;
 
 
 
@@ -32,7 +32,9 @@ class Shop1State extends State<Shop1>
     _tabController = new TabController(vsync: this, length: 4, initialIndex: 0);
     _color= UIData.shopColor;
     items = Provider.of<ShopVM>(context, listen: false);
-    _categories = items.shopItems()[0];
+    items.shopItems().then((value){
+      _categories =value[0];
+    });
   }
 
 
@@ -100,7 +102,7 @@ class Shop1State extends State<Shop1>
       );
   }
 
-  void shopItem(int tab, var value){
+  void shopItem(int tab, Shop value){
     switch(tab){
       case 0:
         Navigator.of(context).pushNamed(UIData.shopItemRoute,arguments: value);

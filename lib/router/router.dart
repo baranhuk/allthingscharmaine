@@ -17,52 +17,52 @@ import 'package:flutter/material.dart';
 
 
 class Router {
-
+/*
 
     static Route<dynamic> generateRoute(settings) {
       switch (settings.name) {
         case UIData.homeRoute:
-          return MaterialPageRoute(builder: (_) => HomeScreen(index:settings.arguments));
+          return MaterialPageRoute<void>(builder: (_) => HomeScreen(index:settings.arguments));
           break;
         case UIData.shopRoute:
-          return MaterialPageRoute(builder: (_) => Shop1());
+          return MaterialPageRoute<void>(builder: (_) => Shop1());
           break;
         case UIData.shopItemRoute:
-          return MaterialPageRoute(builder: (_) => Shop2(item:settings.arguments));
+          return MaterialPageRoute<void>(builder: (_) => Shop2(item:settings.arguments));
           break;
         case UIData.shopBookRoute:
-          return MaterialPageRoute(builder: (_) => Shop7(book:settings.arguments));
+          return MaterialPageRoute<void>(builder: (_) => Shop7(book:settings.arguments));
           break;
         case UIData.codeErrorRoute:
-          return MaterialPageRoute(builder: (_) => Shop3());
+          return MaterialPageRoute<void>(builder: (_) => Shop3());
           break;
         case UIData.addedToLibraryRoute:
-          return MaterialPageRoute(builder: (_) => Shop4());
+          return MaterialPageRoute<void>(builder: (_) => Shop4());
           break;
         case UIData.addedToCartRoute:
-          return MaterialPageRoute(builder: (_) => Shop5(color: settings.arguments));
+          return MaterialPageRoute<void>(builder: (_) => Shop5(color: settings.arguments));
           break;
         case UIData.paymentRoute:
-          return MaterialPageRoute(builder: (_) => Shop6());
+          return MaterialPageRoute<void>(builder: (_) => Shop6());
           break;
         case UIData.socialCommentRoute:
-          return MaterialPageRoute(builder: (_) => Social1(social: settings.arguments));
+          return MaterialPageRoute<void>(builder: (_) => Social1(social: settings.arguments));
           break;
         case UIData.socialReplyRoute:
-          return MaterialPageRoute(builder: (_) => Social2(social: settings.arguments));
+          return MaterialPageRoute<void>(builder: (_) => Social2(social: settings.arguments));
           break;
         case UIData.social:
-          return MaterialPageRoute(builder: (_) => Social3());
+          return MaterialPageRoute<void>(builder: (_) => Social3());
           break;
       }
     }
 
     static Route<dynamic>  unknownRoute (settings) {
-      return new MaterialPageRoute(
+      return new MaterialPageRoute<void>(
         builder: (context) => new NotFoundPage(
         ));
     }
-
+*/
 }
 
 

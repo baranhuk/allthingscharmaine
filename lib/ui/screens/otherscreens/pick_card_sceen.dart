@@ -75,7 +75,7 @@ class _PickCardScreenState extends State<PickCardScreen> {
                                 _formkey.currentState.save();
                                 Navigator.push(
                                     context,
-                                    MaterialPageRoute(
+                                    MaterialPageRoute<void>(
                                       builder: (context) => NewcardScreen(),
                                     ));
                               }
@@ -107,7 +107,7 @@ class _PickCardScreenState extends State<PickCardScreen> {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
+                                  MaterialPageRoute<void>(
                                       builder: (context) => AddressScreen()));
                             },
                             child: Text(

@@ -24,6 +24,7 @@ class PressVideoItem extends StatefulWidget {
     void initState() {
       super.initState();
       video =  Video.fromSnapShot(widget.videoSnapShot, _imageUrl);
+      /*
       StorageReference storageReference =
       FirebaseStorage.instance.ref().child(widget.videoSnapShot['imageUrl']);
       storageReference.getDownloadURL().then((loc) {
@@ -33,6 +34,7 @@ class PressVideoItem extends StatefulWidget {
           video.image = loc;
         });
       });
+      */
     }
 
   @override
@@ -102,6 +104,6 @@ class PressVideoItem extends StatefulWidget {
                   ),
                 ),
               ]),)],))),
-    onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => VideoDetail(Video.fromSnapShot(widget.videoSnapShot, _imageUrl))));},);
+    onTap: (){Navigator.push(context, MaterialPageRoute<void>(builder: (context) => VideoDetail(Video.fromSnapShot(widget.videoSnapShot, _imageUrl))));},);
   }
 }

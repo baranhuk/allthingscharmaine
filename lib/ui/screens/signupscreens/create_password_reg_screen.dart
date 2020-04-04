@@ -1,4 +1,4 @@
-import 'package:allthingscharmaine/core/viewmodels/userviewmodel.dart';
+import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
 import 'package:allthingscharmaine/ui/screens/signupscreens/pick_photo_screen.dart';
 import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';
@@ -79,7 +79,7 @@ class _PasswordRegScreenState extends State<PasswordRegScreen> {
                         onTap: (){
                           Navigator.push(
                               context,
-                              MaterialPageRoute(
+                              MaterialPageRoute<void>(
                                 builder: (context) => LoginScreen(),
                               ),
                             );
@@ -100,7 +100,7 @@ class _PasswordRegScreenState extends State<PasswordRegScreen> {
                               userProvider.addPassword(password);
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
+                                  MaterialPageRoute<void>(
                                       builder: (context) => PickPhotoScreen()));
                             } else {
                               _displaySnackBar(context);
@@ -119,7 +119,7 @@ class _PasswordRegScreenState extends State<PasswordRegScreen> {
     );
   }
 
-  _displaySnackBar(BuildContext context) {
+ void _displaySnackBar(BuildContext context) {
     final snackBar = SnackBar(
       content: Text("passwords don't match"),
       duration: Duration(seconds: 1),

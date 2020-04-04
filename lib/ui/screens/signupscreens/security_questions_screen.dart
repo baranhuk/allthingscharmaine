@@ -1,5 +1,5 @@
-import 'package:allthingscharmaine/core/viewmodels/loginviewmodel.dart';
-import 'package:allthingscharmaine/core/viewmodels/userviewmodel.dart';
+import 'package:allthingscharmaine/core/viewmodels/login_view_model.dart';
+import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
 import 'package:allthingscharmaine/ui/screens/alertscreens/success_screen.dart';
 import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';
@@ -19,7 +19,7 @@ class _SecurityQuestionScreenState extends State<SecurityQuestionScreen> {
   @override
   Widget build(BuildContext context) {
     final userProvider = Provider.of<UserViewModel>(context);
-    final loginProvider = Provider.of<LoginViewmodel>(context);
+    final loginProvider = Provider.of<LoginViewModel>(context);
     return Scaffold(
       body: Form(
         key: _formkey,
@@ -84,7 +84,7 @@ class _SecurityQuestionScreenState extends State<SecurityQuestionScreen> {
                         onTap: (){
                           Navigator.push(
                               context,
-                              MaterialPageRoute(
+                              MaterialPageRoute<void>(
                                 builder: (context) => LoginScreen(),
                               ),
                             );
@@ -102,10 +102,10 @@ class _SecurityQuestionScreenState extends State<SecurityQuestionScreen> {
                             _formkey.currentState.save();
                             userProvider.addSecurityAnswers(
                                 firstAnswer, secAnswer);
-                            loginProvider.signUpUserNSaveData();
+                          //  loginProvider.signUpUserNSaveData();
                             Navigator.push(
                               context,
-                              MaterialPageRoute(
+                              MaterialPageRoute<void>(
                                 builder: (context) => SuccessScreen(),
                               ),
                             );

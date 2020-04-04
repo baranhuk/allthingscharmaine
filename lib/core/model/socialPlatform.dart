@@ -8,7 +8,7 @@ class SocialPlatform {
    SocialPlatform({this.platform,this.social,this.documentRef});
 
   SocialPlatform.fromMap(Map<dynamic, dynamic> map, {this.documentRef,this.social})
-      : platform = map["name"];
+      : platform = map["name"].toString();
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

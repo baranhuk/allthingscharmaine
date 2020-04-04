@@ -1,6 +1,6 @@
 import 'package:allthingscharmaine/core/model/social.dart';
 import 'package:allthingscharmaine/core/viewmodels/socialVM.dart';
-import 'package:allthingscharmaine/core/viewmodels/userviewmodel.dart';
+import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
 import 'package:allthingscharmaine/utils/uiData.dart';
 import 'package:allthingscharmaine/core/model/user_signup_dto.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,7 +24,7 @@ class Social2 extends StatelessWidget{
   }
 
   Future<FirebaseUser> getFirebaseUser() async {
-    FirebaseUser user = await firebaseAuth.currentUser().timeout(Duration(seconds:20)).catchError((error){
+    FirebaseUser user = await firebaseAuth.currentUser().timeout(Duration(seconds:20)).catchError((Error error){
       print(error);
       showInSnackBar("Authentication Error");
     });

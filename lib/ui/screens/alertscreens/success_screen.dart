@@ -55,7 +55,7 @@ class SuccessScreen extends StatelessWidget {
                             onPressed: () {
                               Navigator.push(
                                   context,
-                                  MaterialPageRoute(
+                                  MaterialPageRoute<void>(
                                       builder: (context) => LoginScreen()));
                             },
                             child: Text(

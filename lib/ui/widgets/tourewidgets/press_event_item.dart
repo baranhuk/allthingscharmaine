@@ -21,6 +21,7 @@ class _PressEventItemState extends State<PressEventItem> {
   @override
   void initState() {
     super.initState();
+    /*
     StorageReference storageReference =
         FirebaseStorage.instance.ref().child(widget.eventSnapShot['image']);
     storageReference.getDownloadURL().then((loc) {
@@ -29,6 +30,7 @@ class _PressEventItemState extends State<PressEventItem> {
         _imageUrl = loc;
       });
     });
+    */
   }
 
   @override
@@ -65,7 +67,7 @@ class _PressEventItemState extends State<PressEventItem> {
                       padding: EdgeInsets.only(
                           left: 17.0, right: 17.0, top: 15.0, bottom: 10.0),
                       child: Text(
-                        widget.eventSnapShot['title'] ?? '',
+                        widget.eventSnapShot['title'].toString() ?? '',
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
@@ -80,7 +82,7 @@ class _PressEventItemState extends State<PressEventItem> {
       onTap: () {
         Navigator.push(
             context,
-            MaterialPageRoute(
+            MaterialPageRoute<void>(
                 builder: (context) => EventDetail(
                     Event.fromSnapShot(widget.eventSnapShot, _imageUrl))));
       },

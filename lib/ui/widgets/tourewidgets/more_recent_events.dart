@@ -41,7 +41,7 @@ class MoreRecentEvents extends StatelessWidget {
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       )),), onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
+                  Navigator.push(context, MaterialPageRoute<void>(
                       builder: (context) => PressEventList()));
                 },)
               ],
@@ -50,7 +50,7 @@ class MoreRecentEvents extends StatelessWidget {
               height: 19,
             ),
 
-            StreamBuilder(stream: Firestore.instance.collection('event').where('eventDate', isGreaterThanOrEqualTo: DateTime.now()).orderBy('eventDate').limit(2).snapshots(),
+            StreamBuilder<QuerySnapshot>(stream: Firestore.instance.collection('event').where('eventDate', isGreaterThanOrEqualTo: DateTime.now()).orderBy('eventDate').limit(2).snapshots(),
                 builder: (context, snapShot){
                   if(!snapShot.hasData)return const Center(child: Text('No Event'),);
                   return ListView.builder(

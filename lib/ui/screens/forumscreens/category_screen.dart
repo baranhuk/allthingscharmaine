@@ -117,7 +117,7 @@ class CategoryScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context){
+                    MaterialPageRoute<void>(builder: (context){
                       return TopicScreen();
                     })
                 );

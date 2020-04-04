@@ -93,21 +93,21 @@ class _QAScreenState extends State<QAScreen> {
                     if (index == 0) {
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          MaterialPageRoute<void>(
                               builder: (contex) => QAByCharmaine()));
                     }
                     if (index == 1) {
                       // open questions asked
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          MaterialPageRoute<void>(
                               builder: (context) => AskedQuestion()));
                     }
                     if (index == 2) {
                       // open ask a question
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          MaterialPageRoute<void>(
                               builder: (contex) => AskQuestion()));
                     }
                     if (index == 3) {
@@ -115,7 +115,7 @@ class _QAScreenState extends State<QAScreen> {
 
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          MaterialPageRoute<void>(
                               builder: (contex) => MyQuestions()));
                     }
                   },

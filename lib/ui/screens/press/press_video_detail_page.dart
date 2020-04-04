@@ -217,6 +217,7 @@ class _MoreVideoItemState extends State<MoreVideoItem>{
   @override
   void initState() {
     super.initState();
+    /*
     StorageReference storageReference =
     FirebaseStorage.instance.ref().child(widget.video.image);
     storageReference.getDownloadURL().then((loc) {
@@ -225,6 +226,7 @@ class _MoreVideoItemState extends State<MoreVideoItem>{
         widget.video.image = loc;
       });
     });
+    */
   }
 
   @override
@@ -297,6 +299,6 @@ class _MoreVideoItemState extends State<MoreVideoItem>{
                       ],
                     )),
               ])),),
-    onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => VideoDetail(widget.video)));},);
+    onTap: (){Navigator.push(context, MaterialPageRoute<void>(builder: (context) => VideoDetail(widget.video)));},);
   }
 }

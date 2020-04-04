@@ -17,13 +17,16 @@ class CharmaineTvItem extends StatefulWidget {
   @override
   void initState() {
     super.initState();
-    StorageReference storageReference = FirebaseStorage.instance.ref().child(widget.snapShot['image']);
-    storageReference.getDownloadURL().then((loc) {
+    /*
+    StorageReference storageReference = FirebaseStorage.instance.ref().child(widget.snapShot['image'].toString());
+    storageReference.getDownloadURL().then((value) {
+
       if (!mounted) return;
       setState((){
         _imageUrl = loc;
       });
-    } );
+    });
+    */
   }
   @override
   Widget build(BuildContext context) {
@@ -49,7 +52,7 @@ class CharmaineTvItem extends StatefulWidget {
               height: 105.0,
               width: screenWidth,
               fit: BoxFit.cover),
-        Center(child: Text(widget.snapShot['categoryName'], style: TextStyle(color: Colors.white, fontSize: 14.0,
+        Center(child: Text(widget.snapShot['categoryName'].toString(), style: TextStyle(color: Colors.white, fontSize: 14.0,
             fontFamily: 'Poppins',
             fontWeight: FontWeight.w500),),),
 
@@ -57,7 +60,7 @@ class CharmaineTvItem extends StatefulWidget {
       ),),
     ),
       onTap: (){
-      Navigator.push(context, MaterialPageRoute(builder: (context) => PressVideoList(title: 'charmaine tv', category: widget.snapShot['categoryName'], categoryId: widget.snapShot.documentID,)));
+      Navigator.push(context, MaterialPageRoute<void>(builder: (context) => PressVideoList(title: 'charmaine tv', category: widget.snapShot['categoryName'].toString(), categoryId: widget.snapShot.documentID,)));
     },);
   }
 }

@@ -1,12 +1,12 @@
 import 'package:allthingscharmaine/core/model/social.dart';
 import 'package:allthingscharmaine/core/model/socialPlatform.dart';
 import 'package:allthingscharmaine/core/services/API.dart';
-import 'package:allthingscharmaine/locator.dart';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class SocialVM with ChangeNotifier{
-  Api _api = locator<Api>();
+  Api _api = Api();
 
   List<SocialPlatform> _socialPlatforms;
   List<SocialPlatform> _socialPlatform;
@@ -39,7 +39,7 @@ class SocialVM with ChangeNotifier{
          data["user"] = uID;
          return data;
        }
-       await _api.addDocument('$path/replies', toJson()).timeout(Duration(seconds:10)).whenComplete(()=>status=true).catchError((error){
+       await _api.addDocument('$path/replies', toJson()).timeout(Duration(seconds:10)).whenComplete(()=>status=true).catchError((Error error){
         print("doc save error");
         print(error);
       });

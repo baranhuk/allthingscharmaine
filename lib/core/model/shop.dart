@@ -23,10 +23,10 @@ class Shop {
   Shop.fromMap(Map<dynamic, dynamic> map, {this.documentRef})
       : image = '${UIData.storage}${map["imageUrl"]}',
         cost = map["price"].toString(),
-        info = map["information"],
-        detail = map["detail"],
-        description= map["description"],
-        colors= map["colors"];
+        info = map["information"].toString(),
+        detail = map["detail"].toString(),
+        description= map["description"].toString(),
+        colors= map["colors"].toString();
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

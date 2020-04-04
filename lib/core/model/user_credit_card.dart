@@ -19,12 +19,12 @@ class UserCreditCard {
       this.reference});
 
   UserCreditCard.fromMap(Map<dynamic, dynamic> map, {this.reference})
-      : creditcardNumber = map["creditcardNumber"],
-        creditcardHolderName = map["creditcardHolderName"],
-        expiryMonth = map["expiryMonth"],
-        defaultCard = map["defaultCard"],
-        expiryYear = map["expiryYear"],
-        creditcardType = map["creditcardType"];
+      : creditcardNumber = map["creditcardNumber"].toString(),
+        creditcardHolderName = map["creditcardHolderName"].toString(),
+        expiryMonth = map["expiryMonth"].toString(),
+        defaultCard = map["defaultCard"] as bool,
+        expiryYear = map["expiryYear"].toString(),
+        creditcardType = map["creditcardType"].toString();
 
   UserCreditCard.fromSnapshot(DocumentSnapshot snapshot)
       : this.fromMap(snapshot.data, reference: snapshot.reference);

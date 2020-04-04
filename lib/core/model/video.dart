@@ -24,25 +24,25 @@ class Video {
 
   Video.fromSnapShot(DocumentSnapshot snapshot, String imageUrl)
       : id = snapshot.documentID,
-        title = snapshot['title'],
-        description = snapshot['text'],
-        duration = snapshot['timing'],
-        viewCount = snapshot['viewCount'],
+        title = snapshot['title'].toString(),
+        description = snapshot['text'].toString(),
+        duration = snapshot['timing'].toString(),
+        viewCount = snapshot['viewCount'] as int,
         time = DateTime.parse(snapshot['createdAt'].toDate().toString()),
         image = imageUrl,
-        videoUrl = snapshot['videoUrl'],
-        category = snapshot['category']?.cast<String>();
+        videoUrl = snapshot['videoUrl'].toString(),
+        category = snapshot['category']?.cast<String>() as List<String>;
 
   Video.fromSnapShotOnly(DocumentSnapshot snapshot)
       : id = snapshot.documentID,
-        title = snapshot['title'],
-        description = snapshot['text'],
-        duration = snapshot['timing'],
-        viewCount = snapshot['viewCount'],
+        title = snapshot['title'].toString(),
+        description = snapshot['text'].toString(),
+        duration = snapshot['timing'].toString(),
+        viewCount = snapshot['viewCount'] as int,
         time = DateTime.parse(snapshot['createdAt'].toDate().toString()),
-        image = snapshot['imageUrl'],
-        videoUrl = snapshot['videoUrl'],
-        category = snapshot['category']?.cast<String>();
+        image = snapshot['imageUrl'].toString(),
+        videoUrl = snapshot['videoUrl'].toString(),
+        category = snapshot['category']?.cast<String>() as List<String>;
 
   String getPublishedDate(){
     if (time ==null) return '';

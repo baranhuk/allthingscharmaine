@@ -36,8 +36,8 @@ Widget build(BuildContext context) {
   ],alignment: Alignment.topCenter,fit: StackFit.expand,);
 }
 
-void _settingModalBottomSheet(context){
-  showModalBottomSheet(
+void _settingModalBottomSheet(BuildContext context){
+  showModalBottomSheet<void>(
       context: context,
       builder: (BuildContext bc) {
         return Container(

@@ -16,11 +16,11 @@ class Social{
  Social.fromMap(Map<dynamic, dynamic> map, {this.documentRef})
       : image = '${UIData.storage}${map["imageUrl"]}',
         authorImage = '${UIData.storage}${map["authorImage"]}',
-        author = map["author"],
-        info = map["information"],
+        author = map["author"].toString(),
+        info = map["information"].toString(),
         time = (map["createdAt"]as Timestamp).toDate(),
-        header = map["title"],
-        content = map["content"];
+        header = map["title"].toString(),
+        content = map["content"].toString();
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();

@@ -42,7 +42,7 @@ class MoreRecentArticles extends StatelessWidget {
                           fontWeight: FontWeight.w400,
                         ))),
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(
+                    Navigator.push(context, MaterialPageRoute<void>(
                         builder: (context) => PressArticleList()));
                   },)
               ],
@@ -50,7 +50,7 @@ class MoreRecentArticles extends StatelessWidget {
             SizedBox(
               height: 19,
             ),
-            StreamBuilder(stream: Firestore.instance.collection('article').orderBy('createdAt').limit(2).snapshots(),
+            StreamBuilder<QuerySnapshot>(stream: Firestore.instance.collection('article').orderBy('createdAt').limit(2).snapshots(),
                 builder: (context, snapShot){
                   if(!snapShot.hasData)return const Center(child: Text('No Article'),);
                   return ListView.builder(

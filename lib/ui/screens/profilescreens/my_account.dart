@@ -236,7 +236,7 @@ class _MyAccountState extends State<MyAccount> {
                               onPressed: () {
                                 Navigator.push(
                                     context,
-                                    MaterialPageRoute(
+                                    MaterialPageRoute<void>(
                                         builder: (context) =>
                                             ProfileEditedAlertBackground()));
                               },

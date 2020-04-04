@@ -5,11 +5,11 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:provider/provider.dart';
 
-import '../lib/core/viewmodels/loginviewmodel.dart';
+import '../lib/core/viewmodels/login_view_model.dart';
 import '../lib/core/viewmodels/shopVM.dart';
 import '../lib/core/viewmodels/socialVM.dart';
 import '../lib/core/viewmodels/user_creditcard_viewmodel.dart';
-import '../lib/core/viewmodels/userviewmodel.dart';
+import '../lib/core/viewmodels/iser_view_model.dart';
 import '../lib/ui/screens/signupscreens/login_screen.dart';
 import '../lib/ui/screens/signupscreens/name_reg_screen.dart';
 
@@ -17,7 +17,7 @@ import '../lib/ui/screens/signupscreens/name_reg_screen.dart';
 class MockNavigationObserver extends Mock implements NavigatorObserver{}
 //class MockUserViewModel extends Mock implements UserViewModel{}
 class MockUserViewModel extends Mock implements UserViewModel{}
-class MockLoginViewModel extends Mock implements LoginViewmodel{}
+class MockLoginViewModel extends Mock implements LoginViewModel{}
 class MockUserCreditCardViewmodel extends Mock implements UserCreditCardViewmodel{}
 class MockSocialVM extends Mock implements SocialVM{}
 class MockShopViewmodel extends Mock implements ShopVM{}
@@ -29,7 +29,7 @@ void main(){
   group('LoginScreen Navigation Test',(){
     NavigatorObserver mockObserver;
     UserViewModel mockUserViewModel;
-    LoginViewmodel mockLoginViewmodel;
+    LoginViewModel mockLoginViewmodel;
     UserCreditCardViewmodel mockUserCreditCardViewmodel;
     SocialVM mockSocialVM;
     ShopVM mockShopVM;
@@ -47,7 +47,7 @@ void main(){
       */
       mockObserver = MockNavigationObserver();
        mockUserViewModel = UserViewModel();
-       mockLoginViewmodel = LoginViewmodel();
+       mockLoginViewmodel = LoginViewModel();
        mockUserCreditCardViewmodel = UserCreditCardViewmodel();
        mockSocialVM = SocialVM();
       mockShopVM = ShopVM();

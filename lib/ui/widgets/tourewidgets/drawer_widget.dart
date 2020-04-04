@@ -1,4 +1,4 @@
-import 'package:allthingscharmaine/core/viewmodels/loginviewmodel.dart';
+import 'package:allthingscharmaine/core/viewmodels/login_view_model.dart';
 import 'package:allthingscharmaine/ui/screens/QA/qascreen.dart';
 import 'package:allthingscharmaine/ui/screens/charmainetv/charmaine_tv_list_page.dart';
 import 'package:allthingscharmaine/ui/screens/forumscreens/category_screen.dart';
@@ -13,7 +13,7 @@ class NavigationDrawer extends StatelessWidget {
   NavigationDrawer({Key key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final userProvider = Provider.of<LoginViewmodel>(context);
+    final userProvider = Provider.of<LoginViewModel>(context);
     return Container(
       padding: EdgeInsets.only(right: 20.0, left: 20.0),
       child: Column(
@@ -54,7 +54,7 @@ class NavigationDrawer extends StatelessWidget {
                   // Then close the drawer
                   Navigator.pop(context);
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => CharmaineTv()));
+                      MaterialPageRoute<void>(builder: (context) => CharmaineTv()));
                 },
               ),
               ListTile(
@@ -74,7 +74,7 @@ class NavigationDrawer extends StatelessWidget {
                   Navigator.pop(context);
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      MaterialPageRoute<void>(
                           builder: (context) => CategoryScreen()));
                 },
               ),
@@ -94,7 +94,7 @@ class NavigationDrawer extends StatelessWidget {
                   // Then close the drawer
                   Navigator.pop(context);
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => QAScreen()));
+                      MaterialPageRoute<void>(builder: (context) => QAScreen()));
                 },
               ),
               ListTile(
@@ -131,7 +131,7 @@ class NavigationDrawer extends StatelessWidget {
                   Navigator.pop(context);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(
+                    MaterialPageRoute<void>(
                       builder: (context) => MyAccount(),
                     ),
                   );
@@ -153,7 +153,7 @@ class NavigationDrawer extends StatelessWidget {
                   // Then close the drawer
                   Navigator.pop(context);
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => OrderHistory()));
+                      MaterialPageRoute<void>(builder: (context) => OrderHistory()));
                 },
               ),
               ListTile(
@@ -209,7 +209,7 @@ class NavigationDrawer extends StatelessWidget {
               Navigator.pop(context);
               userProvider.signUserOut();
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => NameRegScreen()));
+                  MaterialPageRoute<void>(builder: (context) => NameRegScreen()));
             },
           ),
         ],

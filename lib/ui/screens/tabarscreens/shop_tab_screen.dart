@@ -18,7 +18,7 @@ class _ShopTabScreenState extends State<ShopTabScreen>
   TabController _tabBarController;
   int active = 0;
   Color _color;
-  var items;
+  ShopVM items;
   List<Shop> _categories = [];
   final GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey<ScaffoldState>();
 
@@ -192,7 +192,7 @@ class _ShopTabScreenState extends State<ShopTabScreen>
     );
   }
 
-  void shopItem(int tab, var value) {
+  void shopItem(int tab, Shop value) {
     switch (tab) {
       case 0:
         Navigator.of(context).pushNamed(UIData.shopItemRoute, arguments: value);

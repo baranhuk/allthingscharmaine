@@ -105,10 +105,12 @@ class _PressVideoListState extends State<PressVideoList>{
                               setData(snapShotList);
                             });
                           }else{
+                            /*
                             _api.getMoreCategoryVideoList([widget.categoryId], _lastDocument, _batchSize)
                                 .then((snapShotList){
                               setData(snapShotList);
                             });
+                            */
                           }
 
                         }
@@ -132,9 +134,11 @@ class _PressVideoListState extends State<PressVideoList>{
       setData(snapShotList);
     });
   }else{
+      /*
         _api.getInitialCategoryVideoList([widget.categoryId], _batchSize).then((snapShotList) {
           setData(snapShotList);
         });
+        */
     }
   }
 

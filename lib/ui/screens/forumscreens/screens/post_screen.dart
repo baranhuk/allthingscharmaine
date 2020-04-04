@@ -42,7 +42,7 @@ class SubCategoryScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context){
+                    MaterialPageRoute<void>(builder: (context){
                       return SubPostScreen();
                     })
                 );
@@ -205,7 +205,7 @@ class SubCategoryScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context){
+                    MaterialPageRoute<void>(builder: (context){
                       return NewTopicScreen();
                     })
                 );
@@ -233,7 +233,7 @@ class SubCategoryScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context){
+                    MaterialPageRoute<void>(builder: (context){
                       return NewThreadScreen();
                     })
                 );

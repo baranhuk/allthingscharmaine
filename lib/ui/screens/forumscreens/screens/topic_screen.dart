@@ -42,7 +42,7 @@ class TopicScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context){
+                    MaterialPageRoute<void>(builder: (context){
                       return SubPostScreen();
                     })
                 );
@@ -195,7 +195,7 @@ class TopicScreen extends StatelessWidget {
               onPressed: () {
                 Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context){
+                    MaterialPageRoute<void>(builder: (context){
                       return NewTopicScreen();
                     })
                 );

@@ -22,7 +22,7 @@ class Api {
         .signInWithEmailAndPassword(email: email, password: password);
   }
 
-  uploadImage(File image) async {
+  void uploadImage(File image) async {
     StorageReference reference =
         FirebaseStorage.instance.ref().child(image.path.toString());
     StorageUploadTask uploadTask = reference.putFile(image);
@@ -32,12 +32,12 @@ class Api {
     // String downloadURL =
     //     (await uploadTask.onComplete).ref.getDownloadURL().toString();
 
-    final String url = (await downloadUrl.ref.getDownloadURL());
+    final String url = (await downloadUrl.ref.getDownloadURL()).toString();
 
     userSignupDTO.imageUri = url;
   }
 
-  saveUserData(String path, Map data, Map cardData) async {
+ void saveUserData(String path, Map<String,dynamic> data, Map<String,dynamic> cardData) async {
     ref = _db.collection(path);
     ref.add(data).then((onValue) {
       onValue.collection("UserCreditCard").add(cardData);
@@ -45,7 +45,7 @@ class Api {
     });
   }
 
-  saveUserCreditcard(String path, Map data) async {
+  void saveUserCreditcard(String path, Map<String,dynamic> data) async {
     ref = _db.collection(path);
     ref.add(data);
   }
@@ -129,11 +129,11 @@ class Api {
     ref = _db.collection(path);
     return ref.document(id).delete();
   }
-  Future<DocumentReference> addDocument(String path,Map data) {
+  Future<DocumentReference> addDocument(String path,Map<String,dynamic> data) {
     ref = _db.collection(path);
     return ref.add(data);
   }
-  Future<void> updateDocument(Map data , String id,String path) {
+  Future<void> updateDocument(Map<String,dynamic> data , String id,String path) {
     ref = _db.collection(path);
     return ref.document(id).updateData(data) ;
   }

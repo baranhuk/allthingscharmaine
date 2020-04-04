@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:allthingscharmaine/core/viewmodels/userviewmodel.dart';
+import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
 import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
 import 'package:allthingscharmaine/utils/imageClipper.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';
@@ -133,7 +133,7 @@ class _PickPhotoScreenState extends State<PickPhotoScreen> {
                     onTap: (){
                           Navigator.push(
                               context,
-                              MaterialPageRoute(
+                              MaterialPageRoute<void>(
                                 builder: (context) => LoginScreen(),
                               ),
                             );
@@ -152,7 +152,7 @@ class _PickPhotoScreenState extends State<PickPhotoScreen> {
 
                       Navigator.push(
                           context,
-                          MaterialPageRoute(
+                          MaterialPageRoute<void>(
                               builder: (context) => PickPaymentMethodScreen()));
                     },
                   ),
@@ -166,7 +166,7 @@ class _PickPhotoScreenState extends State<PickPhotoScreen> {
   }
 
   Future<String> getImage(String fromWhere) async {
-    var image;
+    File image;
 
     if (fromWhere == "CAMERA") {
       image = await ImagePicker.pickImage(source: ImageSource.camera);

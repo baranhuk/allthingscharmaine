@@ -1,5 +1,5 @@
 
-import 'package:allthingscharmaine/core/viewmodels/userviewmodel.dart';
+import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
 
 import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';
@@ -23,8 +23,8 @@ class _NameRegScreen extends State<NameRegScreen> {
   final _formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-   // var userProvider = Provider.of<UserViewModel>(context);
-  //  var userProvider = Provider.of<UserViewModel>(context);
+
+    var userProvider = Provider.of<UserViewModel>(context);
     return Scaffold(
 
       body: CustomScrollView(
@@ -115,7 +115,7 @@ class _NameRegScreen extends State<NameRegScreen> {
                     UserViewModel().addnames(_firstname, _lastname);
                   Navigator.push(
                       context,
-                      MaterialPageRoute(
+                      MaterialPageRoute<void>(
                           builder: (context) => EmailRegScreen()));
                 }
               },

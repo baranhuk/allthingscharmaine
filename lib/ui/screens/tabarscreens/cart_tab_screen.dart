@@ -85,7 +85,7 @@ class CartTabScreen extends StatelessWidget {
                       onPressed: () {
                         Navigator.push(
                             context,
-                            MaterialPageRoute(
+                            MaterialPageRoute<void>(
                                 builder: (context) => ContactInfoScreen()));
                       },
                       child: Text(

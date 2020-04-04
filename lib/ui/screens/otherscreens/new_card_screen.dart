@@ -195,7 +195,7 @@ class _NewcardScreenState extends State<NewcardScreen> {
                                   _formkey.currentState.save();
                                   Navigator.push(
                                       context,
-                                      MaterialPageRoute(
+                                      MaterialPageRoute<void>(
                                           builder: (context) =>
                                               AddressScreen()));
                                 }

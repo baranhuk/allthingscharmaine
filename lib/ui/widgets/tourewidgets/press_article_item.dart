@@ -20,6 +20,7 @@ class PressArticleItem extends StatefulWidget {
   @override
   void initState() {
     super.initState();
+    /*
     StorageReference storageReference =
     FirebaseStorage.instance.ref().child(widget.articleSnapShot['image']);
     storageReference.getDownloadURL().then((loc) {
@@ -28,6 +29,7 @@ class PressArticleItem extends StatefulWidget {
         _imageUrl = loc;
       });
     });
+    */
   }
 
   @override
@@ -66,7 +68,7 @@ class PressArticleItem extends StatefulWidget {
                     padding: EdgeInsets.only(
                         left: 17.0, right: 17.0, top: 15.0, bottom: 10.0),
                     child: Text(
-                      widget.articleSnapShot['title'] ?? '',
+                      widget.articleSnapShot['title'].toString() ?? '',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -79,7 +81,7 @@ class PressArticleItem extends StatefulWidget {
                   )
                 ]))),
     onTap: () {
-      Navigator.push(context, MaterialPageRoute(
+      Navigator.push(context, MaterialPageRoute<void>(
           builder: (context) => ArticleDetail(Article.fromSnapShot(widget.articleSnapShot, _imageUrl))));
     });
   }

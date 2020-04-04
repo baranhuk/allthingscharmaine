@@ -23,6 +23,7 @@ class HeaderMovieItem extends StatefulWidget {
     @override
     void initState() {
       super.initState();
+      /*
       StorageReference storageReference =
       FirebaseStorage.instance.ref().child(widget.videoSnapShot['imageUrl']);
       storageReference.getDownloadURL().then((loc) {
@@ -31,6 +32,7 @@ class HeaderMovieItem extends StatefulWidget {
           _imageUrl = loc;
         });
       });
+      */
     }
 
   @override
@@ -77,7 +79,7 @@ class HeaderMovieItem extends StatefulWidget {
 
                           Flexible(
                               child: Text(
-                                widget.videoSnapShot['timing'] ?? '',
+                                widget.videoSnapShot['timing'].toString() ?? '',
                                 style: TextStyle(
                                   color: CustomColors.TEXT_COLOR,
                                   fontSize: 14.0,
@@ -88,7 +90,7 @@ class HeaderMovieItem extends StatefulWidget {
 
                           Flexible(
                             child: Text(
-                              widget.videoSnapShot['title'] ,
+                              widget.videoSnapShot['title'].toString() ,
                               maxLines: 2,
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
@@ -102,6 +104,6 @@ class HeaderMovieItem extends StatefulWidget {
                       )))
                 ])
         )),
-    onTap: (){Navigator.push(context, MaterialPageRoute(builder: (context) => VideoDetail(Video.fromSnapShot(widget.videoSnapShot, _imageUrl))));},);
+    onTap: (){Navigator.push(context, MaterialPageRoute<void>(builder: (context) => VideoDetail(Video.fromSnapShot(widget.videoSnapShot, _imageUrl))));},);
   }
 }

@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 
 class BottomNavBar extends StatelessWidget {
-  final color;
+  final Color color;
   BottomNavBar({this.color});
 
   @override

@@ -100,7 +100,7 @@ class SubPostScreen extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context){
+                  MaterialPageRoute<void>(builder: (context){
                     return PostReplyScreen();
                   })
               );
@@ -128,7 +128,7 @@ class SubPostScreen extends StatelessWidget {
             onPressed: () {
               Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context){
+                  MaterialPageRoute<void>(builder: (context){
                     return NewThreadScreen();
                   })
               );

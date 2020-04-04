@@ -10,7 +10,7 @@ class MoreVideos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
         margin: EdgeInsets.symmetric(horizontal: 16.0),
-        child: StreamBuilder(stream: Firestore.instance.collection('video').orderBy('createdAt', descending: true).limit(7).snapshots(),
+        child: StreamBuilder<QuerySnapshot>(stream: Firestore.instance.collection('video').orderBy('createdAt', descending: true).limit(7).snapshots(),
     builder: (context, snapShot){
       if(!snapShot.hasData || snapShot.data.documents.length < 5)return Container();
         return Column(
@@ -44,7 +44,7 @@ class MoreVideos extends StatelessWidget {
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.w400,
                       )),), onTap: () {
-                  Navigator.push(context, MaterialPageRoute(
+                  Navigator.push(context, MaterialPageRoute<void>(
                       builder: (context) =>
                           PressVideoList(title: 'press', category: 'videos',)));
                 })

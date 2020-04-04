@@ -167,7 +167,7 @@ class NewTopicScreen extends StatelessWidget {
                   onPressed: () {
                     Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context){
+                        MaterialPageRoute<void>(builder: (context){
                           return SubCategoryScreen();
                         })
                     );

@@ -31,8 +31,8 @@ class BookCard extends StatelessWidget {
       ],alignment: Alignment.topCenter,fit: StackFit.expand,),height: 165.0,width: 250.0,);
   }
 
-  void _settingModalBottomSheet(context){
-   category == 'eBook'? Navigator.pushNamed(context, UIData.paymentRoute) : showModalBottomSheet(
+  void _settingModalBottomSheet(BuildContext context){
+   category == 'eBook'? Navigator.pushNamed(context, UIData.paymentRoute) : showModalBottomSheet<void>(
         context: context,
         builder: (BuildContext bc) {
           return Container(

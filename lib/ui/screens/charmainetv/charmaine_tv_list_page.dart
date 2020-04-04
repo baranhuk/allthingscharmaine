@@ -76,7 +76,7 @@ class _CharmaineTvState extends State<CharmaineTv> {
             ),
 
             SizedBox(height: 10.0,),
-            StreamBuilder(stream: Firestore.instance.collection('charmainetv').orderBy('position').snapshots(),
+            StreamBuilder<QuerySnapshot>(stream: Firestore.instance.collection('charmainetv').orderBy('position').snapshots(),
               builder: (context, snapShot){
                 if(!snapShot.hasData)return const Center(child: Text('loading'),);
                 return ListView.builder(

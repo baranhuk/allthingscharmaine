@@ -107,7 +107,7 @@ class _ContactInfoScreen extends State<ContactInfoScreen> {
                             print(_name + _email);
                             Navigator.push(
                                 context,
-                                MaterialPageRoute(
+                                MaterialPageRoute<void>(
                                   builder: (context) => PickCardScreen(),
                                 ));
                           }

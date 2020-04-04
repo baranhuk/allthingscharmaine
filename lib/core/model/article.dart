@@ -1,3 +1,4 @@
+import 'package:allthingscharmaine/utils/config.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Article {
@@ -17,8 +18,8 @@ class Article {
 
   Article.fromSnapShot(DocumentSnapshot snapshot, String imageUrl):
         id = snapshot.documentID,
-        title = snapshot['title'],
-        description = snapshot['description'],
-        date = DateTime.parse(snapshot['createdAt'].toDate().toString()),
+        title = snapshot[Config.title] as String,
+        description = snapshot[Config.desc] as String,
+        date = DateTime.parse(snapshot[Config.createdAt].toDate().toString()),
         image = imageUrl;
 }

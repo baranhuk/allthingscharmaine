@@ -100,7 +100,7 @@ class CategoryScreen extends StatelessWidget {
             FlatButton(
               padding: EdgeInsets.all(0.0),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                Navigator.push(context, MaterialPageRoute<void>(builder: (context) {
                   return TopicScreen();
                 }));
               },
