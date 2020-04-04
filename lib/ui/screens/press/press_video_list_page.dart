@@ -1,5 +1,5 @@
 import 'package:allthingscharmaine/core/services/API.dart';
-import 'package:allthingscharmaine/locator.dart';
+
 import 'package:allthingscharmaine/ui/widgets/tourewidgets/more_recent_videos.dart';
 import 'package:allthingscharmaine/ui/widgets/tourewidgets/press_video_item.dart';
 import 'package:allthingscharmaine/utils/custom_colors.dart';
@@ -125,7 +125,7 @@ class _PressVideoListState extends State<PressVideoList>{
   @override
   void initState() {
     super.initState();
-    _api = locator<Api>();
+    _api = Api();
     _loading = true;
     if (widget.categoryId == null) {
     _api.getInitialVideoList(_batchSize).then((snapShotList) {

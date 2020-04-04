@@ -9,7 +9,8 @@ import 'package:allthingscharmaine/locator.dart';
 
 class ShopVM with ChangeNotifier{
 
-  Api _api = locator<Api>();
+ Api _api = locator<Api>();
+
   List<Shop> _clothing;
   List<Shop> _aprons;
   List<Shop> _books;

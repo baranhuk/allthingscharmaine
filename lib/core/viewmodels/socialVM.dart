@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 
 class SocialVM with ChangeNotifier{
   Api _api = locator<Api>();
+
   List<SocialPlatform> _socialPlatforms;
   List<SocialPlatform> _socialPlatform;
 

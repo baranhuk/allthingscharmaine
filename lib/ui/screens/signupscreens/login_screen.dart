@@ -1,27 +1,38 @@
-import 'package:allthingscharmaine/core/viewmodels/loginviewmodel.dart';
-import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
+
+
+import 'package:allthingscharmaine/core/viewmodels/shopVM.dart';
+import 'package:allthingscharmaine/core/viewmodels/userviewmodel.dart';
+
+import 'package:flutter/material.dart';
 import 'package:allthingscharmaine/utils/margin_utils.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/viewmodels/loginviewmodel.dart';
 import '../home_screen.dart';
+import 'name_reg_screen.dart';
 
-class LoginScreen extends StatefulWidget {
-  @override
-  _LoginScreenState createState() => _LoginScreenState();
-}
 
-class _LoginScreenState extends State<LoginScreen> {
+
+class LoginScreen extends StatelessWidget {
+  LoginScreen({Key key}) : super(key: key);
+   Key key;
+
+ static const navigateToRegisterScreen = Key('navigateToRegister');
+
   final _formkey = GlobalKey<FormState>();
+
   String email,password;
   @override
   Widget build(BuildContext context) {
-    final userProvider = Provider.of<LoginViewmodel>(context);
+
+   final userProvider = Provider.of<LoginViewmodel>(context);
+
     // TODO: implement build
     return Scaffold(
-      
+
       body: Form(
         key: _formkey,
         child: Padding(
@@ -30,9 +41,20 @@ class _LoginScreenState extends State<LoginScreen> {
             children: <Widget>[
               ListView(
                 children: <Widget>[
+                  /*
                   CustomAppbar(
                     istrue: false,
                     title: "welcome back",
+                  ),
+                  */
+
+                  Container(
+                    padding: EdgeInsets.only(top: 20),
+                    child: Text('Charmaine',textAlign:TextAlign.center,style: TextStyle(
+                        fontSize: 30.0,
+                        color: MyColors().pinkActive,
+                        fontStyle: FontStyle.normal,
+                        fontWeight: FontWeight.bold)),
                   ),
                   Align(
                     alignment: Alignment.centerLeft,
@@ -61,7 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(25.0),
                                 side:
-                                    BorderSide(color: MyColors().facebookBlue),
+                                BorderSide(color: MyColors().facebookBlue),
                               ),
                               color: MyColors().facebookBlue,
                             ),
@@ -132,7 +154,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Align(
-                    alignment: Alignment.centerLeft,
+                    alignment: Alignment.center,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(8.0, 16.0, 0.0, 16.0),
                       child: InkWell(
@@ -145,54 +167,91 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                   ),
                   Row(
-                  children: <Widget>[
-                    Expanded(
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Container(
-                          height: 50.0,
-                          child: FlatButton(
-                            onPressed: () {
-                              if(_formkey.currentState.validate()){
-                                _formkey.currentState.save();
-                                userProvider.signInUser(email, password);
-
-                                Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => HomeScreen()));
-
-
-                              }
-                              
-                            },
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(8.0, 16.0, 0.0, 16.0),
+                          child: InkWell(
+                            onTap: ()=> print("Do something!!"),
                             child: Text(
-                              "login",
-                              style: TextStyle(color: Colors.white),
+                              "Don't have an account?",
+                              style: TextStyle(color: Colors.blue),
                             ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25.0),
-                              side: BorderSide(color: Colors.white),
-                            ),
-                            color: MyColors().pinkActive,
                           ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
+
+                      FlatButton(
+                       key: navigateToRegisterScreen,
+                        onPressed: (){
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) {
+                                    return ChangeNotifierProvider(
+                                      create: (_)=>UserViewModel(),
+                                      child: NameRegScreen(),
+                                    );
+                                  }));
+                        },
+                        child: Text('Register',style: TextStyle(fontSize: 16,color: MyColors().pinkActive,
+                            fontStyle: FontStyle.normal,
+                            fontWeight: FontWeight.bold),),
+                      )
+
+                    ],
+                  ),
+                  Row(
+                    children: <Widget>[
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Container(
+                            height: 50.0,
+                            child: FlatButton(
+                              onPressed: () {
+                                if(_formkey.currentState.validate()){
+                                  _formkey.currentState.save();
+                                 userProvider.signInUser(email, password);
+
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => HomeScreen()));
+
+
+                                }
+
+                              },
+                              child: Text(
+                                "login",
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25.0),
+                                side: BorderSide(color: Colors.white),
+                              ),
+                              color: MyColors().pinkActive,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ],
               ),
               // Positioned(
               //   left: 0,
               //   right: 0,
               //   bottom: 0,
-                
+
               // ),
             ],
           ),
         ),
-      ),
+      )
     );
   }
 }

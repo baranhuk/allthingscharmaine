@@ -1,5 +1,5 @@
 import 'package:allthingscharmaine/core/services/API.dart';
-import 'package:allthingscharmaine/locator.dart';
+
 import 'package:allthingscharmaine/ui/widgets/tourewidgets/press_event_item.dart';
 import 'package:allthingscharmaine/utils/custom_colors.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -108,7 +108,7 @@ class _PressEventListSate extends State<PressEventList>{
   @override
   void initState() {
     super.initState();
-    _api = locator<Api>();
+    _api = Api();
     _api.getInitialEventList(_batchSize).then((snapShotList) {
       setState(() {
         eventSnapShotList = snapShotList;

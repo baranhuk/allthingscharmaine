@@ -1,6 +1,6 @@
 import 'package:allthingscharmaine/core/model/video.dart';
 import 'package:allthingscharmaine/core/services/API.dart';
-import 'package:allthingscharmaine/locator.dart';
+
 import 'package:allthingscharmaine/ui/widgets/tourewidgets/chewie_video_item.dart';
 import 'package:allthingscharmaine/utils/custom_colors.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -164,7 +164,7 @@ class _VideoDetailState extends State<VideoDetail>{
   @override
   void initState() {
     super.initState();
-    _api = locator<Api>();
+    _api = Api();
     controller = VideoPlayerController.network(
         widget._video.videoUrl);
     if(widget._video.category != null){

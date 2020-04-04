@@ -11,10 +11,11 @@ import 'package:provider/provider.dart';
 import 'core/viewmodels/loginviewmodel.dart';
 import 'core/viewmodels/user_creditcard_viewmodel.dart';
 import 'core/viewmodels/userviewmodel.dart';
-import 'locator.dart';
+
+import 'ui/screens/signupscreens/login_screen.dart';
 
 void main() {
-  setupLocator();
+
   runApp(MyApp());
 }
 
@@ -31,23 +32,24 @@ class MyApp extends StatelessWidget {
           return MultiProvider(
             providers: [
               ChangeNotifierProvider(
-                create: (_) => locator<UserViewModel>(),
+                create: (_) => UserViewModel(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<LoginViewmodel>(),
+                create: (_) => LoginViewmodel(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<UserCreditCardViewmodel>(),
+                create: (_) => UserCreditCardViewmodel(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<ShopVM>(),
+                create: (_) => ShopVM(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<SocialVM>(),
+                create: (_) => SocialVM(),
               )
             ],
             child: MaterialApp(
               home: HomeScreen(),
+              debugShowCheckedModeBanner: false,
               theme: ThemeData(
                   cursorColor: MyColors().pinkInactive,
                   primaryColor: MyColors().pinkInactive,
@@ -61,23 +63,24 @@ onUnknownRoute: Router.unknownRoute,
           return MultiProvider(
             providers: [
               ChangeNotifierProvider(
-                create: (_) => locator<UserViewModel>(),
+                create: (_) => UserViewModel(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<LoginViewmodel>(),
+                create: (_) =>LoginViewmodel(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<UserCreditCardViewmodel>(),
+                create: (_) => UserCreditCardViewmodel(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<ShopVM>(),
+                create: (_) => ShopVM(),
               ),
               ChangeNotifierProvider(
-                create: (_) => locator<SocialVM>(),
+                create: (_) => SocialVM(),
               )
 
             ],
             child: MaterialApp(
+              debugShowCheckedModeBanner: false,
               home: Homepage(),
               theme: ThemeData(
                   cursorColor: MyColors().pinkInactive,
@@ -98,7 +101,8 @@ onUnknownRoute: Router.unknownRoute,
 class Homepage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return NameRegScreen();
+
+    return LoginScreen();
   }
 }
 

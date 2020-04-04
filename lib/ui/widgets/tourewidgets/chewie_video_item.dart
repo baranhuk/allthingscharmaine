@@ -1,6 +1,6 @@
-import 'package:chewie/chewie.dart';
+//import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
-import 'package:screen/screen.dart';
+//import 'package:screen/screen.dart';
 import 'package:video_player/video_player.dart';
 
 class ChewieVideo extends StatefulWidget {
@@ -17,13 +17,13 @@ class ChewieVideo extends StatefulWidget {
 }
 
 class _CheWieVideoState extends State<ChewieVideo> {
-  ChewieController
-  _chewieController; // determines how the player should work and how should it look like
+ // ChewieController _chewieController; // determines how the player should work and how should it look like
   bool keepScreenOn = true;
 
   @override
   void initState() {
     super.initState();
+    /*
     // Wrapper on top of the videoPlayerController
     _chewieController = ChewieController(
       videoPlayerController: widget.videoPlayerController,
@@ -47,15 +47,18 @@ class _CheWieVideoState extends State<ChewieVideo> {
     );
     _chewieController.videoPlayerController.addListener(listener);
     Screen.keepOn(true);
+    */
   }
 
   @override
   Widget build(BuildContext context) {
+    /*
     return Chewie(
       controller: _chewieController,
     );
+    */
   }
-
+/*
   void listener() {
     if (_chewieController.videoPlayerController.value.initialized) {
       if (!_chewieController.videoPlayerController.value.isPlaying) {
@@ -65,7 +68,7 @@ class _CheWieVideoState extends State<ChewieVideo> {
       }
     }
   }
-
+*/
   @override
   void didUpdateWidget(ChewieVideo oldWidget) {
     // TODO: implement didUpdateWidget
@@ -76,9 +79,9 @@ class _CheWieVideoState extends State<ChewieVideo> {
   void dispose() {
     // IMPORTANT to dispose of all the used resources
     super.dispose();
-    Screen.keepOn(false);
+   // Screen.keepOn(false);
     widget.videoPlayerController.pause();
     widget.videoPlayerController.dispose();
-    _chewieController.dispose();
+  //  _chewieController.dispose();
   }
 }

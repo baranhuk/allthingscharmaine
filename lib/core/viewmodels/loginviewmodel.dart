@@ -5,6 +5,7 @@ import 'package:allthingscharmaine/locator.dart';
 import 'package:flutter/widgets.dart';
 
 class LoginViewmodel extends ChangeNotifier {
+
   final Api api = locator<Api>();
   
     Future signUpUserNSaveData() async {
@@ -30,5 +31,5 @@ class LoginViewmodel extends ChangeNotifier {
     Future signUserOut()async{
       api.signOut();
     }
-  
+
 }
