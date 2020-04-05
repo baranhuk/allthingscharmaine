@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'core/viewmodels/login_view_model.dart';
 import 'core/viewmodels/user_creditcard_viewmodel.dart';
-import 'core/viewmodels/iser_view_model.dart';
+import 'core/viewmodels/user_view_model.dart';
 
 import 'ui/screens/signupscreens/login_screen.dart';
 

@@ -9,7 +9,7 @@ import '../lib/core/viewmodels/login_view_model.dart';
 import '../lib/core/viewmodels/shopVM.dart';
 import '../lib/core/viewmodels/socialVM.dart';
 import '../lib/core/viewmodels/user_creditcard_viewmodel.dart';
-import '../lib/core/viewmodels/iser_view_model.dart';
+import '../lib/core/viewmodels/user_view_model.dart';
 import '../lib/ui/screens/signupscreens/login_screen.dart';
 import '../lib/ui/screens/signupscreens/name_reg_screen.dart';
 

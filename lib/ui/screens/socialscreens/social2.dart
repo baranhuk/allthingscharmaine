@@ -1,6 +1,6 @@
 import 'package:allthingscharmaine/core/model/social.dart';
 import 'package:allthingscharmaine/core/viewmodels/socialVM.dart';
-import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
+import 'package:allthingscharmaine/core/viewmodels/user_view_model.dart';
 import 'package:allthingscharmaine/utils/uiData.dart';
 import 'package:allthingscharmaine/core/model/user_signup_dto.dart';
 import 'package:firebase_auth/firebase_auth.dart';

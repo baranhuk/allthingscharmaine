@@ -1,7 +1,7 @@
 
 
 import 'package:allthingscharmaine/core/viewmodels/shopVM.dart';
-import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
+import 'package:allthingscharmaine/core/viewmodels/user_view_model.dart';
 
 import 'package:flutter/material.dart';
 import 'package:allthingscharmaine/utils/margin_utils.dart';

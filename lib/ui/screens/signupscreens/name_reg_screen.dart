@@ -1,5 +1,5 @@
 
-import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
+import 'package:allthingscharmaine/core/viewmodels/user_view_model.dart';
 
 import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';

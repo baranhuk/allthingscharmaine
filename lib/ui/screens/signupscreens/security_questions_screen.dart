@@ -1,5 +1,5 @@
 import 'package:allthingscharmaine/core/viewmodels/login_view_model.dart';
-import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
+import 'package:allthingscharmaine/core/viewmodels/user_view_model.dart';
 import 'package:allthingscharmaine/ui/screens/alertscreens/success_screen.dart';
 import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';
@@ -102,13 +102,17 @@ class _SecurityQuestionScreenState extends State<SecurityQuestionScreen> {
                             _formkey.currentState.save();
                             userProvider.addSecurityAnswers(
                                 firstAnswer, secAnswer);
+
+
                           //  loginProvider.signUpUserNSaveData();
+                            /*
                             Navigator.push(
                               context,
                               MaterialPageRoute<void>(
                                 builder: (context) => SuccessScreen(),
                               ),
                             );
+                            */
                           }
                         },
                       ),

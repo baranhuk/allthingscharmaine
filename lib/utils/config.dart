@@ -8,6 +8,7 @@ class Config{
   static final String title  = "title";
   static final String desc  = "description";
   static final String createdAt = "createdAt";
+  static final String profilePics = "profilePics";
 
 
 }

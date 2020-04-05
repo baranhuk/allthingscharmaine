@@ -1,6 +1,7 @@
 import 'dart:io';
 
-import 'package:allthingscharmaine/core/viewmodels/iser_view_model.dart';
+import 'package:allthingscharmaine/core/viewmodels/user_view_model.dart';
+import 'package:allthingscharmaine/ui/screens/signupscreens/security_questions_screen.dart';
 import 'package:allthingscharmaine/ui/widgets/nwagbawidgets/custom_appbar.dart';
 import 'package:allthingscharmaine/utils/imageClipper.dart';
 import 'package:allthingscharmaine/utils/my_colors.dart';
@@ -8,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:provider/provider.dart';
-
+import 'package:path_provider/path_provider.dart' as path_provider;
 import 'login_screen.dart';
 import 'payment_pick_screen.dart';
 
@@ -153,7 +154,7 @@ class _PickPhotoScreenState extends State<PickPhotoScreen> {
                       Navigator.push(
                           context,
                           MaterialPageRoute<void>(
-                              builder: (context) => PickPaymentMethodScreen()));
+                              builder: (context) => SecurityQuestionScreen()));
                     },
                   ),
                 )
@@ -166,25 +167,30 @@ class _PickPhotoScreenState extends State<PickPhotoScreen> {
   }
 
   Future<String> getImage(String fromWhere) async {
-    File image;
+    File imageFile;
 
     if (fromWhere == "CAMERA") {
-      image = await ImagePicker.pickImage(source: ImageSource.camera);
+      imageFile = await ImagePicker.pickImage(source: ImageSource.camera);
     } else {
-      image = await ImagePicker.pickImage(source: ImageSource.gallery);
+      imageFile = await ImagePicker.pickImage(source: ImageSource.gallery);
     }
 
-    setState(() {
-      _image = image;
-    });
+     Directory dir = await path_provider.getTemporaryDirectory();
+    var targetPath = dir.absolute.path + "/temp.png";
+
+    if(imageFile != null){
+      setState(() {
+        _image = imageFile;
+      });
+    }else
+      {
+        setState(() {
+          _image = imageFile;
+        });
+      }
+
+
   }
 
-  // Future uploadImage() async {
-  //   StorageReference reference =
-  //       FirebaseStorage.instance.ref().child("UserImages");
-  //   StorageUploadTask uploadTask = reference.putFile(_image);
-  //   var downloadURL = (await uploadTask.onComplete).ref.getDownloadURL();
-  //   userSignupDTO.imageUri = downloadURL.toString();
-  //   print("${userSignupDTO.imageUri}");
-  // }
+
 }
